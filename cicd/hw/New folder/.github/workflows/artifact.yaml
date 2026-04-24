@@ -1,0 +1,25 @@
+#create a file file.txt cnotaining the text "Hello, World!" and upload it as an artifact in a GitHub Actions workflow.```yaml
+name: Upload Artifact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create file.txt
+        run: echo "Hello, World!" > file.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hello-artifact
+          path: file.txt
+  
