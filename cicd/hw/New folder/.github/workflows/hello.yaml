@@ -1,9 +1,9 @@
+#eslint 
 name: test workflows
-
 on: 
   push:
     branches:
-      - man
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
